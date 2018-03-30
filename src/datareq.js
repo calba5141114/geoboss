@@ -4,10 +4,20 @@ function getZipo(zipcode) {
 }
 
 function getZipoJSON(url) {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", url, false ); // false for synchronous request
-    xmlHttp.responseType = 'json';
-    xmlHttp.send( null );
- var response = xmlHttp.responseText;
- return response;
+    
+    
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+    
+          console.log( xhttp.responseText);
+          var response = xhttp.responseText;
+          return response;
+        }
+    };
+    xhttp.open("GET", url , true);
+    xhttp.send();
+ 
+ 
 }
+

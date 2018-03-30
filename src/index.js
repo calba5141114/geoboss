@@ -4,5 +4,5 @@ sub.onclick = () => {
   getZipo(zips[0]);
 zipper.push(getZipoJSON(zipsData[0])) ;
 var response =  zipper[0];
-console.log(response['places']['place name']);
+console.log(response['places']);
 };
